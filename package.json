@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "prettier": "prettier -c .",
+    "prettier:fix": "prettier -w ."
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  }
+}
