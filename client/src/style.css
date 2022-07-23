@@ -1,27 +1,27 @@
 .sales-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
 }
 
 .purchase-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
 }
 
 .purchase-card {
-    display: grid;
+  display: grid;
 }
 
 .main-container {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr;
-    grid-gap: 10px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 10px;
 }
 
 header {
-    background-color: orangered;
-    color: white;
+  background-color: orangered;
+  color: white;
 }

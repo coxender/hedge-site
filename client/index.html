@@ -1,39 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <script type="module" src="/src/main.ts"></script>
+    <title>Hedge Site</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/src/style.css" />
-  <script type="module" src="/src/main.ts"></script>
-  <title>Hedge Site</title>
-</head>
-
-<body>
-  <header>
-    <span>Hedge Site</span>
-    <span>Welcome, [User]!</span>
-    <button>[Account]</button>
-  </header>
-  <main>
-    <div class="main-container">
-      <div class="sales-container">
-        <button class="sales-button">Add New Product</button>
-        <div class="sales-header">
-          <h2>Your Sales</h2>
-          <button>Add Sale</button>
-        </div>
-        <div class="sales-card">
-          <div class="sales-card-header">
-            <span>Title</span>
-            <span>$100.00</span>
-            <span>Qty: N</span>
-            <span>Offers: 1</span>
-          </div>
-          <div class="sales-card-body">
-            <span> Description</span>
-            <div> “Lorem ipsum dolor sit amet, consectetur adipiscing"</div>
+  <body>
+    <header>
+      <span>Hedge Site</span>
+      <span>Welcome, [User]!</span>
+      <button>[Account]</button>
+    </header>
+    <main>
+      <div class="main-container">
+        <div class="sales-container">
+          <button class="sales-button">Add New Product</button>
+          <div class="sales-header">
+            <h2>Your Sales</h2>
+            <button>Add Sale</button>
           </div>
           <div class="sales-card">
             <div class="sales-card-header">
@@ -44,64 +32,74 @@
             </div>
             <div class="sales-card-body">
               <span> Description</span>
-              <div> “Lorem ipsum dolor sit amet, consectetur adipiscing"</div>
+              <div>“Lorem ipsum dolor sit amet, consectetur adipiscing"</div>
+            </div>
+            <div class="sales-card">
+              <div class="sales-card-header">
+                <span>Title</span>
+                <span>$100.00</span>
+                <span>Qty: N</span>
+                <span>Offers: 1</span>
+              </div>
+              <div class="sales-card-body">
+                <span> Description</span>
+                <div>“Lorem ipsum dolor sit amet, consectetur adipiscing"</div>
+              </div>
+            </div>
+            <div class="sales-card">
+              <div class="sales-card-header">
+                <span>Title</span>
+                <span>$100.00</span>
+                <span>Qty: N</span>
+                <span>Offers: 1</span>
+              </div>
+              <div class="sales-card-body">
+                <span> Description</span>
+                <div>“Lorem ipsum dolor sit amet, consectetur adipiscing"</div>
+              </div>
             </div>
           </div>
-          <div class="sales-card">
-            <div class="sales-card-header">
-              <span>Title</span>
-              <span>$100.00</span>
-              <span>Qty: N</span>
-              <span>Offers: 1</span>
+          <div class="purchase-container">
+            <div class="purchase-card">
+              <h2>You can buy:</h2>
+              <div class="purchase-card-header">
+                <span>Title</span>
+                <span>Amount</span>
+                <span> Qty: 1</span>
+                <button>BUY</button>
+              </div>
+              <div class="purchase-card-body">
+                <div class="description"></div>
+                <span class="vendor">Sold by: DUDE</span>
+              </div>
             </div>
-            <div class="sales-card-body">
-              <span> Description</span>
-              <div> “Lorem ipsum dolor sit amet, consectetur adipiscing"</div>
+            <div class="purchase-card">
+              <div class="purchase-card-header">
+                <span>Title</span>
+                <span>Amount</span>
+                <span> Qty: 1</span>
+                <button>BUY</button>
+              </div>
+              <div class="purchase-card-body">
+                <div class="description"></div>
+                <span class="vendor">Sold by: DUDE</span>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="purchase-container">
-          <div class="purchase-card">
-            <h2>You can buy:</h2>
-            <div class="purchase-card-header">
-              <span>Title</span>
-              <span>Amount</span>
-              <span> Qty: 1</span>
-              <button>BUY</button>
-            </div>
-            <div class="purchase-card-body">
-              <div class="description"></div>
-              <span class="vendor">Sold by: DUDE</span>
-            </div>
-          </div>
-          <div class="purchase-card">
-            <div class="purchase-card-header">
-              <span>Title</span>
-              <span>Amount</span>
-              <span> Qty: 1</span>
-              <button>BUY</button>
-            </div>
-            <div class="purchase-card-body">
-              <div class="description"></div>
-              <span class="vendor">Sold by: DUDE</span>
-            </div>
-          </div>
-          <div class="purchase-card">
-            <div class="purchase-card-header">
-              <span>Title</span>
-              <span>Amount</span>
-              <span> Qty: 1</span>
-              <button>BUY</button>
-            </div>
-            <div class="purchase-card-body">
-              <div class="description"></div>
-              <span class="vendor">Sold by: DUDE</span>
+            <div class="purchase-card">
+              <div class="purchase-card-header">
+                <span>Title</span>
+                <span>Amount</span>
+                <span> Qty: 1</span>
+                <button>BUY</button>
+              </div>
+              <div class="purchase-card-body">
+                <div class="description"></div>
+                <span class="vendor">Sold by: DUDE</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </main>
-</body>
-
+    </main>
+  </body>
 </html>
