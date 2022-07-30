@@ -55,7 +55,7 @@ async function updatePurchases() {
 
   render(template, purchaseContainer);
 }
-await updateProducts();
-await updatePurchases();
+updateProducts();
+updatePurchases();
 //need to do filter for your id vs others\
 // need to get username from uid
