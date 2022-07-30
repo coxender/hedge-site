@@ -27,10 +27,35 @@ async function updateProducts() {
   if (salesContainer == null) {
     throw new Error("sales-container does not exist.");
   }
-
   render(template, salesContainer);
 }
 
-updateProducts();
+const purchaseContainer = document.querySelector<HTMLDivElement>(".purchase-container");
+async function updatePurchases() {
+  const querySnapshot = await getDocs(productCollection);
+  const template = querySnapshot.docs.map((doc) => {
+    const product: Product = doc.data();
+    return html`<div class="purchase-card">
+      <div class="purchase-card-header">
+        <span>${product.name}</span>
+        <span>$${product.price}</span>
+        <span>Qty: ${product.qty}</span>
+        <span>Seller: ${product.sellerUID}</span>
+      </div>
+      <div class="purchase-card-body">
+        <span> Description:</span>
+        <div>${product.description}</div>
+      </div>
+    </div>`;
+  });
 
-// TODO the same thing with buy but omit Offers
+  if (purchaseContainer == null) {
+    throw new Error("sales-container does not exist.");
+  }
+
+  render(template, purchaseContainer);
+}
+await updateProducts();
+await updatePurchases();
+//need to do filter for your id vs others\
+// need to get username from uid
