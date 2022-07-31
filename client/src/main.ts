@@ -31,16 +31,19 @@ async function updateProducts() {
 }
 
 const purchaseContainer = document.querySelector<HTMLDivElement>(".purchase-container");
+
 async function updatePurchases() {
   const querySnapshot = await getDocs(productCollection);
+
   const template = querySnapshot.docs.map((doc) => {
     const product: Product = doc.data();
+
     return html`<div class="purchase-card">
       <div class="purchase-card-header">
         <span>${product.name}</span>
         <span>$${product.price}</span>
         <span>Qty: ${product.qty}</span>
-        <span>Seller: ${product.sellerUID}</span>
+        <span>Seller: ${product.sellerUid}</span>
       </div>
       <div class="purchase-card-body">
         <span> Description:</span>
@@ -55,7 +58,9 @@ async function updatePurchases() {
 
   render(template, purchaseContainer);
 }
+
 updateProducts();
 updatePurchases();
-//need to do filter for your id vs others\
-// need to get username from uid
+
+// TODO need to do filter for your id vs others\
+// TODO need to get username from uid

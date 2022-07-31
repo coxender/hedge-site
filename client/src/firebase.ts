@@ -20,7 +20,7 @@ export interface Product {
   description: string;
   price: number;
   qty: number;
-  sellerUID: string;
+  sellerUid: string;
 }
 
 export const productCollection = collection(db, "products") as CollectionReference<Product>;
