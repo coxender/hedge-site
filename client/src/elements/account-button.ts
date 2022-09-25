@@ -39,6 +39,7 @@ export class AccountButtonElement extends LitElement {
       top: calc(100% - 4px);
       right: 4px;
       background-color: var(--background-color);
+      color: var(--foreground-color);
       padding: 8px 0;
       border-radius: 8px;
     }
