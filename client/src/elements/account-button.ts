@@ -113,3 +113,9 @@ export class AccountButtonElement extends LitElement {
     `;
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "account-button": AccountButtonElement;
+  }
+}
