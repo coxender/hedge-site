@@ -58,7 +58,7 @@ export class AccountButtonElement extends LitElement {
   @state()
   private user: User | null = null;
 
-  unsubscribeFromUser?: () => void;
+  private unsubscribeFromUser?: () => void;
 
   connectedCallback() {
     super.connectedCallback();
