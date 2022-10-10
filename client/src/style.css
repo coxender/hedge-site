@@ -20,6 +20,18 @@ body {
   margin: 0;
 }
 
+header {
+  display: grid;
+  grid-template: 24px / 1fr 24px;
+  padding: 16px;
+  place-items: center;
+}
+
+header h1 {
+  margin: 0;
+  justify-self: start;
+}
+
 main {
   display: grid;
   grid-template-columns: 2fr 1fr;

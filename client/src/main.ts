@@ -1,5 +1,5 @@
 import { render, html } from "lit";
-import { Product, productCollection } from "./firebase";
+import { Product, productCollection } from "./firebase/firestore";
 import { getDocs } from "firebase/firestore";
 
 const salesContainer = document.querySelector<HTMLDivElement>(".sales-container");
