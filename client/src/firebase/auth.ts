@@ -1,5 +1,4 @@
-import { getAuth, signInWithPopup, deleteUser, User, onAuthStateChanged } from "firebase/auth";
-import { GoogleAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, deleteUser, User, onAuthStateChanged, GoogleAuthProvider } from "firebase/auth";
 import { app } from "./app";
 
 const auth = getAuth(app);
