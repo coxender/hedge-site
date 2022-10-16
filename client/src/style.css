@@ -2,6 +2,8 @@
   color-scheme: dark light;
   --background-color: #ffffff;
   --foreground-color: #000000;
+
+  --font-family: "Nunito", Arial, Helvetica, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -9,6 +11,10 @@
     --background-color: #121212;
     --foreground-color: #ffffff;
   }
+}
+
+* {
+  font-family: var(--font-family);
 }
 
 html {

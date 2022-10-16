@@ -52,6 +52,7 @@ export class AccountButtonElement extends LitElement {
       white-space: nowrap;
       padding: 8px 12px;
       text-align: start;
+      font-family: var(--font-family);
     }
   `;
 
