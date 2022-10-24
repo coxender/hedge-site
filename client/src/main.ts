@@ -41,9 +41,12 @@ const purchaseContainer = document.querySelector<HTMLDivElement>(".purchase-cont
 
 async function updatePurchases() {
   const querySnapshot = await getDocs(productCollection);
-
   const template = querySnapshot.docs.map((doc) => {
     const product: Product = doc.data();
+
+    if (userId == product.sellerUid) {
+      return html``; // not sure if I can return null here, I didn't have time to read lit docs
+    }
 
     return html`<div class="purchase-card">
       <div class="purchase-card-header">
