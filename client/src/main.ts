@@ -1,6 +1,9 @@
 import { render, html } from "lit";
 import { Product, productCollection } from "./firebase/firestore";
 import { getDocs } from "firebase/firestore";
+import { getCurrentUser } from "./firebase/auth";
+
+const userId = getCurrentUser()?.uid;
 
 const salesContainer = document.querySelector<HTMLDivElement>(".sales-container");
 
@@ -9,6 +12,10 @@ async function updateProducts() {
 
   const template = querySnapshot.docs.map((doc) => {
     const product: Product = doc.data();
+
+    if (userId != product.sellerUid) {
+      return html``;
+    }
 
     return html`<div class="sales-card">
       <div class="sales-card-header">
