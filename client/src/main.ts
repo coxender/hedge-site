@@ -1,76 +1,78 @@
 import { render, html } from "lit";
 import { Product, productCollection } from "./firebase/firestore";
-import { getDocs } from "firebase/firestore";
-import { getCurrentUser } from "./firebase/auth";
+import { getDocs, orderBy, query, where } from "firebase/firestore";
+import { subscribeToUser } from "./firebase/auth";
 
-const userId = getCurrentUser()?.uid;
+let userId: string | undefined = undefined;
 
-const salesContainer = document.querySelector<HTMLDivElement>(".sales-container");
+const userContainer = document.querySelector<HTMLDivElement>(".user-container");
 
-async function updateProducts() {
-  const querySnapshot = await getDocs(productCollection);
+async function updateUserProducts() {
+  const userProductQuery = query(productCollection, where("sellerUid", "==", userId ?? ""), orderBy("price", "desc"));
+  const querySnapshot = await getDocs(userProductQuery);
 
   const template = querySnapshot.docs.map((doc) => {
     const product: Product = doc.data();
 
-    if (userId != product.sellerUid) {
-      return html``;
-    }
-
-    return html`<div class="sales-card">
-      <div class="sales-card-header">
+    return html`<div class="user-card">
+      <div class="user-card-header">
         <span>${product.name}</span>
         <span>$${product.price}</span>
         <span>Qty: ${product.qty}</span>
         <span>Offers: 1</span>
       </div>
-      <div class="sales-card-body">
+      <div class="user-card-body">
         <span> Description:</span>
         <div>${product.description}</div>
       </div>
     </div>`;
   });
 
-  if (salesContainer == null) {
-    throw new Error("sales-container does not exist.");
+  if (userContainer == null) {
+    throw new Error("user-container does not exist.");
   }
-  render(template, salesContainer);
+  render(template, userContainer);
 }
 
-const purchaseContainer = document.querySelector<HTMLDivElement>(".purchase-container");
+const otherContainer = document.querySelector<HTMLDivElement>(".other-container");
 
-async function updatePurchases() {
-  const querySnapshot = await getDocs(productCollection);
+async function updateOtherProducts() {
+  const otherProductsQuery = query(
+    productCollection,
+    orderBy("sellerUid"),
+    where("sellerUid", "!=", userId ?? ""),
+    orderBy("price", "desc")
+  );
+  const querySnapshot = await getDocs(otherProductsQuery);
   const template = querySnapshot.docs.map((doc) => {
     const product: Product = doc.data();
 
-    if (userId == product.sellerUid) {
-      return html``; // not sure if I can return null here, I didn't have time to read lit docs
-    }
-
-    return html`<div class="purchase-card">
-      <div class="purchase-card-header">
+    return html`<div class="other-card">
+      <div class="other-card-header">
         <span>${product.name}</span>
         <span>$${product.price}</span>
         <span>Qty: ${product.qty}</span>
         <span>Seller: ${product.sellerUid}</span>
       </div>
-      <div class="purchase-card-body">
+      <div class="other-card-body">
         <span> Description:</span>
         <div>${product.description}</div>
       </div>
     </div>`;
   });
 
-  if (purchaseContainer == null) {
-    throw new Error("sales-container does not exist.");
+  if (otherContainer == null) {
+    throw new Error("user-container does not exist.");
   }
 
-  render(template, purchaseContainer);
+  render(template, otherContainer);
 }
 
-updateProducts();
-updatePurchases();
+subscribeToUser((user) => {
+  userId = user?.uid;
+  updateUserProducts();
+  updateOtherProducts();
+});
 
 // TODO need to do filter for your id vs others\
 // TODO need to get username from uid

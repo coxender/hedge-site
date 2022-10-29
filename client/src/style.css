@@ -46,27 +46,27 @@ main {
   padding: 10px;
 }
 
-.sales-container {
+.user-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
 }
 
-.sales-header {
+.user-header {
   grid-column: 1 / -1;
 }
 
-.purchase-container {
+.other-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
 }
 
-.purchase-header {
+.other-header {
   grid-column: 1 / -1;
 }
 
-.purchase-card {
+.other-card {
   display: grid;
 }
 
