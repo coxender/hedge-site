@@ -119,7 +119,22 @@ subscribeToUser((user) => {
   userId = user?.uid;
   updateUserProducts();
   updateOtherProducts();
+  if (user != null) {
+    enableButtons();
+  } else {
+    disableButtons();
+  }
 });
+function enableButtons() {
+  const restrictedButtons = document.querySelectorAll<HTMLButtonElement>(".login-only");
+  for (const button of restrictedButtons) {
+    button.disabled = false;
+  }
+}
 
-// TODO need to do filter for your id vs others\
-// TODO need to get username from uid
+function disableButtons() {
+  const restrictedButtons = document.querySelectorAll<HTMLButtonElement>(".login-only");
+  for (const button of restrictedButtons) {
+    button.disabled = true;
+  }
+}
