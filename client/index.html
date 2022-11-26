@@ -23,8 +23,21 @@
       <div class="user-container">
         <div class="user-header">
           <h2>Your Sales</h2>
-          <button>Add Sale</button>
+          <button class="login-only" id="add-product-button">Add Sale</button>
         </div>
+        <form class="product-form hidden">
+          <label for="product-name">Product Name</label>
+          <input type="text" maxlength="60" name="name" id="product-name" required/>
+          <label for="product-price">Product Price</label>
+          <input type="number" step="1" min="0" name="price" id="product-price" required/>
+          <label for="product-qty">Product Quantity</label>
+          <input type="number" step="1" min="0" name="qty" id="product-qty" required/>
+          <label for="product-desc">Product Description</label>
+          <textarea name="desc" id="product-desc"  required>
+          </textarea>
+          <button type="submit">Submit</button>
+        </form>
+        
       </div>
       <div class="other-container">
         <h2 class="other-header">You can buy:</h2>
