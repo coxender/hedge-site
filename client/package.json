@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "firebase": "^9.9.1",
-    "lit": "^2.2.8"
+    "lit": "^2.5.0"
   },
   "devDependencies": {
     "typescript": "^4.9.4",
