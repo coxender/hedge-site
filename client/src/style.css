@@ -18,15 +18,21 @@
 }
 
 html {
+  height: 100%;
   background-color: var(--background-color);
   color: var(--foreground-color);
 }
 
 body {
+  height: 100%;
   margin: 0;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 2fr 1fr;
 }
 
 header {
+  grid-column: 1 / -1;
   display: grid;
   grid-template: 24px / 1fr 24px;
   padding: 16px;
@@ -39,26 +45,20 @@ header h1 {
 }
 
 main {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr;
-  grid-gap: 10px;
-  padding: 10px;
+  display: contents;
 }
 
-.user-container {
+.user-container,
+.other-container {
   display: grid;
+  align-content: start;
+  padding: 20px;
   gap: 10px;
+  overflow-y: auto;
 }
 
 .user-header {
   grid-column: 1 / -1;
-}
-
-.other-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
 }
 
 .other-header {
@@ -75,11 +75,16 @@ header {
 }
 
 .product-form {
+  max-width: 600px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto 1fr;
   grid-gap: 10px;
 }
 
 .product-form.hidden {
   display: none;
+}
+
+.product-form textarea {
+  resize: vertical;
 }
