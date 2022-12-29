@@ -6,7 +6,7 @@ const db = getFirestore(app);
 
 export interface Product {
   /** name of product max length 60 characters. */
-  name: string; 
+  name: string;
   /** description of product max length 1000 */
   description: string;
   /** unit price of product, nonegative integer*/
