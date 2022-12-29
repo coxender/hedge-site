@@ -1,7 +1,7 @@
 import { render, html } from "lit";
 import { Product, productCollection } from "./firebase/firestore";
 import { onSnapshot, orderBy, query, where } from "firebase/firestore";
-import { getCurrentUser, subscribeToUser } from "./firebase/auth";
+import { subscribeToUser } from "./firebase/auth";
 
 const otherContainer = document.querySelector<HTMLDivElement>(".other-container");
 
